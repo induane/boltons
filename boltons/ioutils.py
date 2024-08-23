@@ -525,13 +525,13 @@ def is_text_fileobj(fileobj):
 class MultiFileReader:
     """Takes a list of open files or file-like objects and provides an
     interface to read from them all contiguously. Like
-    :func:`itertools.chain()`, but for reading files.
+    :func:`itertools.chain()`, but for reading files::
 
        >>> mfr = MultiFileReader(BytesIO(b'ab'), BytesIO(b'cd'), BytesIO(b'e'))
        >>> mfr.read(3).decode('ascii')
-       u'abc'
+       'abc'
        >>> mfr.read(3).decode('ascii')
-       u'de'
+       'de'
 
     The constructor takes as many fileobjs as you hand it, and will
     raise a TypeError on non-file-like objects. A ValueError is raised

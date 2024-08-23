@@ -8,7 +8,6 @@ from tempfile import mkdtemp
 from unittest import TestCase
 from zipfile import ZipFile, ZIP_DEFLATED
 
-
 from boltons import ioutils
 
 CUR_FILE_PATH = os.path.abspath(__file__)
@@ -214,7 +213,6 @@ class BaseTestMixin:
         for method_name in methods:
             with self.assertRaises(ValueError):
                 getattr(self.spooled_flo, method_name)()
-
 
 
 class TestSpooledBytesIO(TestCase, BaseTestMixin, AssertionsMixin):
